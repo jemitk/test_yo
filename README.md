@@ -46,23 +46,23 @@ This Fridge Bot Sample uses Language Understanding Intelligent Service, or, LUIS
 Sign into [LUIS website](https://www.luis.ai) and go to **My Apps** tab. Click on **New App** button to create a new LUIS app.
 
 2. Add a new intent <br />
-<img src="images/LUIS_add_intent.png" width="400px"> <br />
+![Add a new intent](<img src=")images/LUIS_add_intent.png) <br />
 Intents represent the actions that the user wants to perform. For this sample bot, your LUIS app will need to handle six different intents: None, add, clear, help, remove and show. To add a new intent, locate to your LUIS app and click on **Intents** on the left panel. Click on **Add Intent** button and type in the name of the intent you want to create. Here, we are creating the help intent.
 
 3. Enter utterances <br />
-<img src="images/LUIS_add_utterances.png" width="600px"> <br />
+![Enter utterances](images/LUIS_add_utterances.png) <br />
 Utterances are textual input from the user. After creating an intent, you can add expected utterances to the intent. Don't forget to hit **Save** button after adding utterances.
 
 4. Add a new entity <br />
-<img src="images/LUIS_add_entity.png" width="400px"> <br />
+![Add a new entity](images/LUIS_add_entity.png) <br />
 Entities represent the object that is relevant to the intent. For example, for the utterance "add an apple", "add" is the intent and "apple" is the entity. For some intents such as "help", entites are not required. However, for some intents like the "add" example, entities are necessary. For this sample bot, your LUIS app will need to handle one custom simple entity, called item. To create a new entity, click on **entities** on the left panel and click on **add entity** button.
 
 5. Label entity in utterances <br />
-<img src="images/LUIS_label_entity.png" width="600px"> <br />
+![Label entity in utterances](images/LUIS_add_utterances.png) <br />
 Locate to the intent where entities are need to be labeled. For example, "add" intent needs an entity. Click on the word that you want to label as an entity for the utterances and select type of the entity that you want to label it to.
 
 6. Train, test and publish the app <br />
-<img src="images/LUIS_train_and_test.png" width="600px"> <br />
+![Train, test and publish the app](images/LUIS_train_and_test.png) <br />
 At this point, you have first, added six intents (None, add, clear, help, remove and show), second, added one entity (item), and third, added many utterances to each of the intents and correctly labeled the entities for each of the utterances. Now, you have to train the app with the information you provided. Go to the **Train & Test** from the left panel and click on the **Train Application** button to train your app. You can then test the model by typing in a test utterance. Then, go to the **Publish App** and click on **Publish** button to publish your app. The endpoint url for your LUIS app will be created. Make a note of this url to connect it with your sample bot.
 
 #### Register the Sample Bot
