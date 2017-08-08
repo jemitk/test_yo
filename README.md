@@ -58,7 +58,7 @@ Utterances are textual input from the user. After creating an intent, you can ad
 Entities represent the object that is relevant to the intent. For example, for the utterance "add an apple", "add" is the intent and "apple" is the entity. For some intents such as "help", entites are not required. However, for some intents like the "add" example, entities are necessary. For this sample bot, your LUIS app will need to handle one custom simple entity, called item. To create a new entity, click on **entities** on the left panel and click on **add entity** button.
 
 5. Label entity in utterances <br />
-![Label entity in utterances](images/LUIS_add_utterances.png) <br />
+![Label entity in utterances](images/LUIS_label_entity.png) <br />
 Locate to the intent where entities are need to be labeled. For example, "add" intent needs an entity. Click on the word that you want to label as an entity for the utterances and select type of the entity that you want to label it to.
 
 6. Train, test and publish the app <br />
