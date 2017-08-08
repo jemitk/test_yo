@@ -4,9 +4,13 @@
 Fridge Bot is a bot that helps you to manage refrigerator inventory. You can add or delete an item or see or clear the inventory of your fridge. The bot uses LUIS (Language Understanding Intelligent Service) Cognitive Service to recognize your intents so that you can talk to the bot as if you are talking to a person. This sample bot will serve as a good example of incorporating natural language processing service to Skype bots.
 
 ## Bot Demo
-To add the Fridge Bot to your Skype account, click [here](https://join.skype.com/bot/f2cf7cce-f6c5-427f-84b6-9099c7b877a8). You can add an item to the fridge, remove an item from the fridge, check the fridge inventory or clear out the fridge using natural language as if you are talking to a person.
+To add the Fridge Bot to your Skype account, click [here](https://join.skype.com/bot/f2cf7cce-f6c5-427f-84b6-9099c7b877a8).
 
 ## How it Works
+- The LUIS service associated with this sample bot can understand six different intents: None, add, clear, help, remove and show. It has one entity named item, which is associated with add and remove intents. Each of the intents triggers an action associated with that intent and the action performs necessary operation and ends the dialog.
+- Data that contains saved items is kept track of with userData for simplicity of the sample bot.
+- The app listens for messages from users and the registered LUIS recognizer will trigger the dialog with the recognize intent.
+
 ```
 // dialog for PUT: putting in ingredients
 bot.dialog('put', [
@@ -25,16 +29,14 @@ bot.dialog('put', [
     matches: 'add'
 });
 ```
-- The app listens for messages from users and the registered LUIS recognizer will trigger the dialog with the recognize intent. For example, when the LUIS recognizers understands the user's intent as 'add', dialog for 'put' as seen below will be triggered.
-- *args.intent.entities* includes the entities of the recognized intent, and is used to find the item that is associated with the add intent in this case.
-- The LUIS service associated with this sample bot can understand six different intents: None, add, clear, help, remove and show. It has one entity named item, which is associated with add and remove intents. Each of the intents triggers an action associated with that intent and the action performs necessary operation (for example, put dialog for the add intent adds the item to the fridge, or, adds the item to the userData) and ends the dialog.
-- Data that contains saved items is kept track of with userData for simplicity of the sample bot.
+- Let's look at the 'put' dialog above. This dialog is for the 'add' intent. When the LUIS recognizer understands the user's intent as 'add', this dialog will be triggered. This 'put' dialog then, finds the 'item' entity which is the item that the user wants to put into the fridge. It uses the *args.intent.entities* which includes the entities of the recognized intent to do so. Finally, the dialog calls the helper function *util.addToFridge()* to put the item into the fridge and ends the dialog.
+
 
 ## Do It Yourself (Deploy the Bot Sample)
 In this section, we will go over how to deploy this Fridge Bot sample from start to end.
 
 #### Prerequisites
-Set up the environment for your bot as described [here](https://skype.visualstudio.com/SCC/DEVPLATFORM/_git/bots_bots_devplatform/pullrequest/86368#_a=overview). Install Node.js and npm if not already installed, and install the Bot Builder SDK for Node.js and restify as instructed.
+Set up the environment for your bot as described [here](https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-quickstart). Install Node.js and npm if not already installed, and install the Bot Builder SDK for Node.js and restify as instructed.
 
 #### Create a LUIS Application
 This Fridge Bot Sample uses Language Understanding Intelligent Service, or, LUIS, to understand user's intents. Learn more about LUIS [here](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/Home). Let's create a new LUIS Application for your Fridge Bot.
@@ -78,7 +80,7 @@ process.env['MICROSOFT_LUIS_ENDPOINT'] = '$MICROSOFT_LUIS_ENDPOINT$';
 ```
 
 #### Deploy the bot to the cloud
-Prerequisites and instructions for deploying the bot are [here](https://docs.microsoft.com/en-us/bot-framework/deploy-bot-overview). After deploying the bot, you can add your bot as a contact by using there join link. You can access the bot's join link from Microsoft Bot Framework, by clicking on your bot and clicking on the **Skype** in Connect to channels tab.
+Prerequisites and instructions for deploying the bot are [here](https://docs.microsoft.com/en-us/bot-framework/deploy-bot-overview). After deploying the bot, you can add your bot as a contact by using its join link. You can access the bot's join link from Microsoft Bot Framework, by clicking on your bot and clicking on the **Skype** in Connect to channels tab.
 
 
 ## More Information
