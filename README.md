@@ -42,7 +42,7 @@ Set up the environment for your bot as described [here](https://docs.microsoft.c
 This Fridge Bot Sample uses Language Understanding Intelligent Service, or, LUIS, to understand user's intents. Learn more about LUIS [here](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/Home). Let's create a new LUIS Application for your Fridge Bot.
 
 1. Create a new application <br />
-<img src="images/LUIS_create_a_new_app.png" width="400px"> <br />
+![Create a new application](images/LUIS_create_a_new_app.png) <br />
 Sign into [LUIS website](https://www.luis.ai) and go to **My Apps** tab. Click on **New App** button to create a new LUIS app.
 
 2. Add a new intent <br />
